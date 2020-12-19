@@ -1,0 +1,41 @@
+.fall {
+  @h: 30px;
+
+  white-space: nowrap;
+  height: @h;
+  padding-top: (@h - 14px)/2;
+
+  &-item {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    height: 14px;
+    cursor: default;
+    border-top: 4px solid transparent;
+
+    // &:hover {
+    //   z-index: 1;
+    //   outline: 1px solid #000;
+    // }
+  }
+
+  &-detail {
+    font-size: 12px;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+
+    &-title {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    &-item {
+      padding-left: 10px;
+      width: 200px;
+
+      span {
+        float: right;
+      }
+    }
+  }
+}

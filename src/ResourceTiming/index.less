@@ -1,0 +1,101 @@
+.rt {
+  @rowH: 30px;
+  @borderColor: #ddd;
+
+  display: flex;
+  flex-direction: column;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+
+  font-size: 12px;
+  color: #000;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+
+  &-con {
+    flex: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    &-l,
+    &-r {
+      position: relative;
+      display: inline-block;
+      width: 50%;
+    }
+  }
+
+  &-item {
+    display: flex;
+    height: @rowH;
+    background: #fff;
+    line-height: @rowH;
+
+    &:nth-child(2n) {
+      background: #f7f7f7;
+    }
+
+    &-common {
+      display: block;
+      width: 80px;
+      padding: 0 8px;
+      border-right: 1px solid @borderColor;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      &.a-c {
+        text-align: center;
+      }
+      &.a-r {
+        text-align: right;
+      }
+    }
+
+    &-name {
+      flex: 1;
+      width: auto;
+      cursor: default;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    &-chart {
+      position: relative;
+      flex: 2.5;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+
+  &-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 1px solid @borderColor;
+  }
+
+  &-footer {
+    display: flex;
+    padding: 4px 0;
+    position: sticky;
+    bottom: 0;
+    z-index: 30;
+    background: #fff;
+    border-top: 1px solid @borderColor;
+
+    .a-r {
+      text-align: center;
+      padding: 0 12px;
+      border-right: 1px solid #f5f5f5;
+      line-height: 1.2;
+    }
+  }
+}
